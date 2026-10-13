@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Harsh Pithva | MCA Student &amp; Aspiring Software Developer</title>
+  <meta name="description" content="Explore Harsh Pithva's portfolio, featuring PostPro, Android development internship experience, technical skills, education, and ongoing learning in software development and AI." />
+  <meta name="theme-color" content="#06070d" />
+
+  <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#06070d',
+              900: '#0b0d18',
+              850: '#0f1222',
+              800: '#151930',
+              700: '#1d2342',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #06070d; }
+    ::-webkit-scrollbar-thumb { background: #1f2540; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #323b66; }
+    
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.04); }
+    }
+    .pulse-glow {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-navy-950 text-slate-100 antialiased selection:bg-fuchsia-500/30 selection:text-fuchsia-200 min-h-screen font-sans">
+
+  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 bg-navy-950/90 backdrop-blur-md border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <!-- Monogram & Name -->
+      <a href="#home" onclick="closeMobileMenu()" class="flex items-center gap-2.5 sm:gap-3 group">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-600 via-fuchsia-600 to-cyan-400 p-[1.5px] shadow-sm shadow-violet-500/20 group-hover:shadow-lg transition-all">
+          <div class="w-full h-full bg-navy-950 rounded-[10px] flex items-center justify-center font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-300 text-xs sm:text-sm">
+            HP
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-white text-sm sm:text-base tracking-tight block group-hover:text-fuchsia-400 transition-colors">Harsh Pithva</span>
+          <span class="text-[10px] sm:text-[11px] font-mono text-slate-400 -mt-1 block">MCA @ RVCE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <a href="#home" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Home</a>
+        <a href="#about" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">About</a>
+        <a href="#skills" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Skills</a>
+        <a href="#projects" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Projects</a>
+        <a href="#experience" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Experience</a>
+        <a href="#education" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Education</a>
+        <a href="#contact" class="nav-link px-3 py-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors">Contact</a>
+      </div>
+
+      <!-- Right Controls: Resume + Mobile Toggle Button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Desktop Resume Button -->
+        <a
+          href="public/resume.pdf"
+          download="Harsh_Pithva_Resume.pdf"
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 hover:from-violet-500 hover:via-indigo-500 hover:to-fuchsia-500 shadow-md shadow-violet-600/30 transition-all active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Download Resume</span>
+        </a>
+
+        <!-- Mobile Quick CV Button -->
+        <a
+          href="public/resume.pdf"
+          download="Harsh_Pithva_Resume.pdf"
+          class="sm:hidden inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 shadow-sm"
+          title="Download CV"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>CV</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button
+          id="mobile-menu-btn"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-700/80 text-slate-200 hover:text-white hover:bg-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-violet-500/50"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <!-- Hamburger Icon (Shown when closed) -->
+          <svg id="hamburger-icon" class="w-5 h-5 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon (Shown when open) -->
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== MOBILE MENU DRAWER ==================== -->
+    <div
+      id="mobile-menu"
+      class="hidden md:hidden border-t border-slate-800/80 bg-slate-950/98 backdrop-blur-2xl px-4 pt-3 pb-6 shadow-2xl transition-all duration-300"
+    >
+      <div class="space-y-1 text-sm font-medium">
+        <a
+          href="#home"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">🏠</span>
+            <span>Home</span>
+          </span>
+          <span class="text-xs font-mono text-slate-500">&rarr;</span>
+        </a>
+
+        <a
+          href="#about"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">👨‍💻</span>
+            <span>About Me</span>
+          </span>
+          <span class="text-xs font-mono text-slate-500">&rarr;</span>
+        </a>
+
+        <a
+          href="#skills"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">⚡</span>
+            <span>Skills &amp; Tech</span>
+          </span>
+          <span class="text-xs font-mono text-slate-500">&rarr;</span>
+        </a>
+
+        <a
+          href="#projects"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">🚀</span>
+            <span>Projects (PostPro)</span>
+          </span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-violet-500/20 text-violet-300 border border-violet-500/30">Flagship</span>
+        </a>
+
+        <a
+          href="#experience"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">💼</span>
+            <span>Experience</span>
+          </span>
+          <span class="text-xs font-mono text-slate-500">&rarr;</span>
+        </a>
+
+        <a
+          href="#education"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">🎓</span>
+            <span>Education</span>
+          </span>
+          <span class="text-xs font-mono text-slate-500">&rarr;</span>
+        </a>
+
+        <a
+          href="#contact"
+          onclick="closeMobileMenu()"
+          class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-xl text-slate-200 hover:text-white hover:bg-slate-900/80 transition-colors"
+        >
+          <span class="flex items-center gap-2.5">
+            <span class="text-base">✉️</span>
+            <span>Contact &amp; Connect</span>
+          </span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Active</span>
+        </a>
+
+        <!-- Drawer Action: Full Resume Button -->
+        <div class="pt-3 mt-2 border-t border-slate-800/80 space-y-2">
+          <a
+            href="public/resume.pdf"
+            download="Harsh_Pithva_Resume.pdf"
+            class="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 shadow-md shadow-violet-600/30 transition-all active:scale-95"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Download Harsh's Resume (PDF)</span>
+          </a>
+
+          <!-- Quick Mobile Contact Strip -->
+          <div class="grid grid-cols-3 gap-2 pt-1 text-center">
+            <a href="https://wa.me/919408517380" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs flex items-center justify-center gap-1 font-medium">
+              <span>💬</span> WhatsApp
+            </a>
+            <a href="mailto:pithvaharsh006@gmail.com" class="p-2 rounded-xl bg-violet-950/40 border border-violet-500/30 text-violet-300 text-xs flex items-center justify-center gap-1 font-medium">
+              <span>✉️</span> Email
+            </a>
+            <a href="https://www.linkedin.com/in/harsh-pithva" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-blue-950/40 border border-blue-500/30 text-blue-300 text-xs flex items-center justify-center gap-1 font-medium">
+              <span>🔗</span> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION (WITH TOP CENTER PHOTO) ==================== -->
+  <section id="home" class="relative min-h-[96vh] flex items-center justify-center pt-28 pb-16 overflow-hidden">
+    <!-- Aurora Glows -->
+    <div class="absolute top-1/6 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-tr from-violet-600/20 via-fuchsia-600/15 to-cyan-500/15 rounded-full blur-[140px] pointer-events-none"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
+      
+      <!-- TOP CENTER PHOTO AVATAR -->
+      <div class="flex flex-col items-center justify-center mb-6">
+        <div class="relative group">
+          <!-- Pulse Halo Behind Photo -->
+          <div class="absolute -inset-2 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 rounded-full blur-md opacity-75 pulse-glow"></div>
+          
+          <!-- Outer Multi-stop Gradient Frame -->
+          <div class="relative w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full p-[3.5px] bg-gradient-to-tr from-violet-500 via-fuchsia-500 to-cyan-400 shadow-2xl">
+            <img
+              src="harsh-pithva.jpg"
+              alt="Harsh Pithva - MCA Student & Software Developer"
+              class="w-full h-full rounded-full object-cover object-top bg-slate-900 border-2 border-navy-950"
+              onerror="this.src='public/harsh-pithva.jpg'"
+            />
+          </div>
+
+          <!-- Monogram Shield Tag -->
+          <div class="absolute bottom-1 right-1 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-violet-600 to-fuchsia-600 border-2 border-navy-950 flex items-center justify-center shadow-md">
+            <span class="font-mono text-xs font-bold text-white tracking-wider">HP</span>
+          </div>
+        </div>
+
+        <!-- Floating Availability Status Badge -->
+        <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/90 border border-violet-500/30 text-xs font-mono text-violet-300 shadow-lg backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Open to Opportunities • MCA @ RVCE</span>
+        </div>
+      </div>
+
+      <!-- Introductory Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 mb-4 shadow-sm">
+        <span class="text-xs font-mono font-semibold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-300 to-cyan-300 uppercase">
+          👋 HELLO, I'M HARSH PITHVA
+        </span>
+      </div>
+
+      <!-- Main Headline with Aurora Gradient -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+        Building practical solutions through
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400">code, creativity</span>, and continuous learning.
+      </h1>
+
+      <!-- Supporting Paragraph -->
+      <p class="mt-5 text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        I'm an MCA student at RV College of Engineering, Bengaluru, with a foundation in programming and web development. I enjoy exploring AI-powered applications, building user-focused digital experiences, and continuously improving my technical and professional skills.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3.5 mt-8">
+        <a
+          href="#projects"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 hover:from-violet-500 hover:via-indigo-500 hover:to-fuchsia-500 shadow-lg shadow-violet-600/30 transition-all active:scale-95"
+        >
+          <span>Explore My Projects</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+
+        <a
+          href="public/resume.pdf"
+          download="Harsh_Pithva_Resume.pdf"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white border border-slate-700 hover:border-violet-500/50 shadow-md transition-all active:scale-95"
+        >
+          <svg class="w-4 h-4 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Download Resume</span>
+        </a>
+
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white bg-slate-900/60 hover:bg-slate-800/80 border border-slate-800 transition-all"
+        >
+          <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          <span>Let's Connect</span>
+        </a>
+      </div>
+
+      <!-- Credential Badges -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-400">
+        <span class="flex items-center gap-1.5"><span class="text-cyan-400">✓</span> RVCE MCA Candidate</span>
+        <span class="text-slate-700 hidden sm:inline">•</span>
+        <span class="flex items-center gap-1.5"><span class="text-fuchsia-400">✓</span> Android Intern Experience</span>
+        <span class="text-slate-700 hidden sm:inline">•</span>
+        <span class="flex items-center gap-1.5"><span class="text-violet-400">✓</span> Creator of PostPro</span>
+      </div>
+
+      <!-- Interactive Aurora Developer Showcase (Vibrant Gradient Redesign) -->
+      <div class="mt-12 max-w-4xl mx-auto text-left">
+        <div class="relative group">
+          <!-- Ambient Aurora Backlight Halo -->
+          <div class="absolute -inset-1.5 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 rounded-3xl blur-xl opacity-35 group-hover:opacity-60 transition-all duration-700 pointer-events-none"></div>
+
+          <!-- Main Glassmorphic Container with Aurora Gradient Border -->
+          <div class="relative rounded-3xl bg-slate-950/90 backdrop-blur-2xl border border-violet-500/30 shadow-2xl shadow-violet-950/60 overflow-hidden">
+            
+            <!-- Window Control Header -->
+            <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-3.5 bg-slate-900/90 border-b border-slate-800/80">
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded-full bg-rose-500 shadow-sm shadow-rose-500/50"></span>
+                  <span class="w-3 h-3 rounded-full bg-amber-500 shadow-sm shadow-amber-500/50"></span>
+                  <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></span>
+                </div>
+                <div class="flex items-center gap-2 pl-2 border-l border-slate-800 text-xs font-mono">
+                  <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-300">HP • HARSH PITHVA</span>
+                  <span class="text-slate-600 hidden sm:inline">|</span>
+                  <span class="text-[11px] text-emerald-400 hidden sm:flex items-center gap-1 font-mono">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    RVCE MCA
+                  </span>
+                </div>
+              </div>
+
+              <!-- Interactive Tabs with Gradient Styling -->
+              <div class="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800/80 text-xs font-mono overflow-x-auto max-w-full">
+                <button onclick="setHeroTab('profile')" id="hero-tab-profile" class="px-3 py-1.5 rounded-lg font-medium text-white bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 shadow-sm transition-all flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+                  <span>🌌</span>
+                  <span class="hidden sm:inline">Developer</span> Profile
+                </button>
+                <button onclick="setHeroTab('postpro')" id="hero-tab-postpro" class="px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+                  <span>🚀</span>
+                  <span>PostPro</span>
+                </button>
+                <button onclick="setHeroTab('stack')" id="hero-tab-stack" class="px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+                  <span>⚡</span>
+                  <span class="hidden sm:inline">Tech</span> Arsenal
+                </button>
+                <button onclick="setHeroTab('code')" id="hero-tab-code" class="px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+                  <span>💻</span>
+                  <span>Code</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="p-5 sm:p-7">
+              
+              <!-- TAB 1: DEVELOPER PROFILE (VISUAL AURORA BENTO CARDS) -->
+              <div id="hero-content-profile" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  
+                  <!-- Card 1: Education (Royal Violet Glow) -->
+                  <div class="relative group/card p-5 rounded-2xl bg-gradient-to-b from-violet-950/40 via-slate-900/80 to-slate-950 border border-violet-500/30 hover:border-violet-400/60 shadow-lg transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-2xl">🎓</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-violet-500/20 text-violet-300 border border-violet-500/40">
+                        MCA @ RVCE
+                      </span>
+                    </div>
+                    <h3 class="text-white font-bold text-sm sm:text-base leading-snug mb-1">
+                      Master of Computer Applications
+                    </h3>
+                    <p class="text-xs text-violet-300 font-mono mb-3">
+                      RV College of Engineering, Bengaluru
+                    </p>
+                    <div class="pt-3 border-t border-violet-500/20 text-xs text-slate-400 space-y-1.5">
+                      <p class="flex items-center gap-1.5 text-slate-200">
+                        <span class="text-violet-400">🏛️</span> Undergrad: BCA Graduate
+                      </p>
+                      <p class="text-[11px] text-slate-400 pl-5">
+                        Bhavan's Shree H.J. Doshi College, Jamnagar
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Card 2: Industry Internship (Cosmic Fuchsia Glow) -->
+                  <div class="relative group/card p-5 rounded-2xl bg-gradient-to-b from-fuchsia-950/40 via-slate-900/80 to-slate-950 border border-fuchsia-500/30 hover:border-fuchsia-400/60 shadow-lg transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-2xl">💼</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/40">
+                        PRACTICAL INTERN
+                      </span>
+                    </div>
+                    <h3 class="text-white font-bold text-sm sm:text-base leading-snug mb-1">
+                      Android Developer Intern
+                    </h3>
+                    <p class="text-xs text-fuchsia-300 font-mono mb-3">
+                      Alpha Automation Company
+                    </p>
+                    <div class="pt-3 border-t border-fuchsia-500/20 text-xs text-slate-400 space-y-1.5">
+                      <p class="flex items-center gap-1.5 text-slate-200">
+                        <span class="text-fuchsia-400">⚡</span> Hands-on mobile development
+                      </p>
+                      <p class="text-[11px] text-slate-400 pl-5">
+                        Automation tools &amp; practical software delivery
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Card 3: Flagship Innovation (Electric Cyan Glow) -->
+                  <div class="relative group/card p-5 rounded-2xl bg-gradient-to-b from-cyan-950/40 via-slate-900/80 to-slate-950 border border-cyan-500/30 hover:border-cyan-400/60 shadow-lg transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                      <span class="text-2xl">🌟</span>
+                      <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+                        FLAGSHIP APP
+                      </span>
+                    </div>
+                    <h3 class="text-white font-bold text-sm sm:text-base leading-snug mb-1">
+                      PostPro Content Assistant
+                    </h3>
+                    <p class="text-xs text-cyan-300 font-mono mb-3">
+                      AI-Simulated Generator
+                    </p>
+                    <div class="pt-3 border-t border-cyan-500/20 text-xs text-slate-400 space-y-1.5">
+                      <p class="flex items-center gap-1.5 text-slate-200">
+                        <span class="text-cyan-400">🎯</span> Mood-based Captions, Tags &amp; Songs
+                      </p>
+                      <p class="text-[11px] text-slate-400 pl-5">
+                        PHP, MySQL relational database &amp; JS
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Bottom Aurora Strip: Professional Mindset & Values -->
+                <div class="p-4 rounded-2xl bg-gradient-to-r from-violet-950/40 via-slate-900 to-cyan-950/40 border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+                  <div class="flex items-center gap-2 text-slate-300 font-mono text-xs">
+                    <span class="text-fuchsia-400">✦</span>
+                    <span class="font-bold text-white">Core Focus:</span>
+                    <span class="text-slate-300">Practical engineering, genuine curiosity &amp; continuous learning</span>
+                  </div>
+                  <div class="flex flex-wrap items-center gap-2 font-mono text-[11px]">
+                    <span class="px-2.5 py-1 rounded-lg bg-violet-500/10 border border-violet-500/30 text-violet-300">💡 Problem Solver</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-fuchsia-500/10 border border-fuchsia-500/30 text-fuchsia-300">⚡ Rapid Learner</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">🤝 Team Collaboration</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: POSTPRO SPOTLIGHT -->
+              <div id="hero-content-postpro" class="space-y-4 hidden">
+                <div class="p-6 rounded-2xl bg-gradient-to-br from-fuchsia-950/40 via-slate-900 to-violet-950/40 border border-fuchsia-500/30">
+                  <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                    <div>
+                      <span class="px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-fuchsia-500/20 text-fuchsia-300 border border-fuchsia-500/30">
+                        MAIN PROJECT HIGHLIGHT
+                      </span>
+                      <h3 class="text-xl font-bold text-white mt-2">PostPro — AI-Simulated Content Companion</h3>
+                      <p class="text-xs text-slate-400 mt-1">Smart social media workflow simplifying caption generation, hashtag discovery, and soundtrack matching.</p>
+                    </div>
+                    <a href="#projects" class="px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-md">
+                      Interactive Simulator &darr;
+                    </a>
+                  </div>
+                  
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                    <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
+                      <span class="text-violet-400 font-mono block text-[10px]">01 / TAXONOMY</span>
+                      <strong class="text-white block mt-1">Mood-Based Logic</strong>
+                      <span class="text-slate-400 text-[11px]">Structured database mappings across 5 moods with curated content.</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
+                      <span class="text-fuchsia-400 font-mono block text-[10px]">02 / BACKEND</span>
+                      <strong class="text-white block mt-1">Relational MySQL Schema</strong>
+                      <span class="text-slate-400 text-[11px]">Normalized tables for tags, tracks, and secure PHP sessions.</span>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 text-xs">
+                      <span class="text-cyan-400 font-mono block text-[10px]">03 / EXPERIENCE</span>
+                      <strong class="text-white block mt-1">One-Click Copy &amp; Export</strong>
+                      <span class="text-slate-400 text-[11px]">Instant clipboard actions for fast social sharing.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: TECHNICAL ARSENAL -->
+              <div id="hero-content-stack" class="space-y-4 hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div class="p-4 rounded-2xl bg-slate-950/70 border border-violet-500/20">
+                    <span class="text-[10px] font-mono text-violet-400 block mb-2 font-bold tracking-wider uppercase">Programming Languages</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/50 text-violet-300 border border-violet-500/30">C</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/50 text-violet-300 border border-violet-500/30">C++</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/50 text-violet-300 border border-violet-500/30">PHP</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/50 text-violet-300 border border-violet-500/30">Python</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/50 text-violet-300 border border-violet-500/30">Java (Foundations)</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-2xl bg-slate-950/70 border border-cyan-500/20">
+                    <span class="text-[10px] font-mono text-cyan-400 block mb-2 font-bold tracking-wider uppercase">Web &amp; Databases</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/50 text-cyan-300 border border-cyan-500/30">HTML5</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/50 text-cyan-300 border border-cyan-500/30">CSS3</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/50 text-cyan-300 border border-cyan-500/30">JavaScript</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/50 text-cyan-300 border border-cyan-500/30">MySQL</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/50 text-cyan-300 border border-cyan-500/30">SQL Server</span>
+                    </div>
+                  </div>
+
+                  <div class="p-4 rounded-2xl bg-slate-950/70 border border-fuchsia-500/20">
+                    <span class="text-[10px] font-mono text-fuchsia-400 block mb-2 font-bold tracking-wider uppercase">Certifications &amp; Experience</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-fuchsia-950/50 text-fuchsia-300 border border-fuchsia-500/30">Android Internship</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-fuchsia-950/50 text-fuchsia-300 border border-fuchsia-500/30">Modern AI</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-fuchsia-950/50 text-fuchsia-300 border border-fuchsia-500/30">CCC Certified</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-fuchsia-950/50 text-fuchsia-300 border border-fuchsia-500/30">Tally Prime</span>
+                      <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-fuchsia-950/50 text-fuchsia-300 border border-fuchsia-500/30">Cyber Drill</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: ENHANCED CODE VIEW -->
+              <div id="hero-content-code" class="space-y-2 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-300 p-5 rounded-2xl bg-slate-950/90 border border-slate-800 overflow-x-auto hidden">
+                <div class="text-slate-500">// Personal Identity &amp; Academics</div>
+                <div><span class="text-purple-400 font-semibold">const</span> <span class="text-blue-300">developer</span> = &#123;</div>
+                <div class="pl-4">name: <span class="text-emerald-300">"Harsh Pithva"</span>,</div>
+                <div class="pl-4">degree: <span class="text-emerald-300">"MCA @ RV College of Engineering, Bengaluru"</span>,</div>
+                <div class="pl-4">undergrad: <span class="text-emerald-300">"BCA @ Bhavan's Shree H.J. Doshi College"</span>,</div>
+                <div class="pl-4">internship: <span class="text-emerald-300">"Android Dev @ Alpha Automation Company"</span>,</div>
+                <div class="pl-4">flagshipProject: <span class="text-fuchsia-300">"PostPro (Mood-Based AI Content Sim)"</span>,</div>
+                <div class="pl-4">traits: [<span class="text-amber-300">"Practical Problem-Solving"</span>, <span class="text-amber-300">"Continuous Learning"</span>]</div>
+                <div>&#125;;</div>
+                <div class="pt-2 text-cyan-400 font-semibold">developer.buildUsefulProducts();</div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section id="about" class="py-20 bg-slate-950/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-fuchsia-400 uppercase tracking-wider block mb-2">BACKGROUND &amp; VALUES</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">A Little About Me</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">Curiosity drives my learning. Building turns it into experience.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-7 space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+          <p class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            I'm Harsh Pithva, a Bachelor of Computer Applications graduate from Bhavan's Shree H.J. Doshi Information Technology College, Jamnagar, Gujarat, and currently pursuing my Master of Computer Applications at RV College of Engineering, Bengaluru.
+          </p>
+          <p class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            My journey in technology has introduced me to programming, web development, databases, and practical application development. One of my key projects, PostPro, explores how a web application can simplify social media content creation through mood-based caption, hashtag, and song suggestions.
+          </p>
+          <p class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            I have also gained internship experience in Android development at Alpha Automation Company. These experiences have strengthened my interest in software development and encouraged me to explore how technology can solve everyday problems.
+          </p>
+          <p class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+            Beyond coding, I am actively working to improve my communication, presentation, leadership, and problem-solving abilities. I believe consistent learning, practical experimentation, and collaboration are essential to becoming a capable software developer.
+          </p>
+          <div class="p-4 rounded-xl bg-violet-950/30 border border-violet-500/20 text-violet-200 text-xs sm:text-sm">
+            <strong class="text-white">Career Objective: </strong> Build strong technical expertise, develop useful software products, gain industry experience, and contribute to real-world technology solutions.
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4">
+          <!-- Profile Card with Photo -->
+          <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
+            <div class="flex items-center gap-4 pb-4 border-b border-slate-800">
+              <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-violet-600 via-fuchsia-600 to-cyan-400 p-[2px] shadow-lg shadow-violet-600/30 flex-shrink-0">
+                <img
+                  src="harsh-pithva.jpg"
+                  alt="Harsh Pithva"
+                  class="w-full h-full rounded-[14px] object-cover object-top bg-slate-900"
+                  onerror="this.src='public/harsh-pithva.jpg'"
+                />
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-base">Harsh Pithva</h4>
+                <p class="text-xs font-mono text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-medium">MCA Student @ RVCE Bengaluru</p>
+                <p class="text-xs text-slate-400">Karnataka / Gujarat, India</p>
+              </div>
+            </div>
+            <div class="pt-4 space-y-2 text-xs">
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <span class="text-white font-medium block">RV College of Engineering (RVCE)</span>
+                <span class="text-slate-400">MCA Candidate • 2026 - Present (Pursuing)</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <span class="text-white font-medium block">Bhavans Shri H.J Doshi IT Institute</span>
+                <span class="text-slate-400">BCA Degree • 2023 - 2026 (Graduated)</span>
+              </div>
+              <div class="p-2.5 rounded-lg bg-slate-950 border border-slate-800">
+                <span class="text-white font-medium block">Alpha Automation Company</span>
+                <span class="text-slate-400">Android Developer Intern</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="font-bold text-white block mb-1">Continuous Learning</span>
+              <span class="text-slate-400">Curiosity-driven technical growth.</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="font-bold text-white block mb-1">Problem-Solving</span>
+              <span class="text-slate-400">Focus on useful software tools.</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="font-bold text-white block mb-1">Creative Thinking</span>
+              <span class="text-slate-400">Combining logic with intuitive UI.</span>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800">
+              <span class="font-bold text-white block mb-1">Collaboration</span>
+              <span class="text-slate-400">Active presentation &amp; teamwork.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section id="skills" class="py-20 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-cyan-400 uppercase tracking-wider block mb-2">TECHNICAL TOOLKIT</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">My Technical Toolkit</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">Technologies I've explored and skills I'm continuing to develop.</p>
+        <p class="text-xs font-mono text-slate-500 mt-2">Zero inflated percentages. Clearly distinguishes hands-on experience from foundational learning.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Programming</h4>
+          <p class="text-xs text-slate-400 mb-4">Core languages and paradigms</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">C / C++</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Practical Experience</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Python</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Foundational</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Java (Fundamentals &amp; J2EE)</span>
+              <span class="px-2 py-0.5 rounded bg-amber-950/40 text-amber-300 border border-amber-800/40 font-mono">Academic &amp; Core</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Web Development</h4>
+          <p class="text-xs text-slate-400 mb-4">Client &amp; server architectures</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">PHP</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Practical Project Experience</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">HTML &amp; CSS</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Layout &amp; Styling</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">JavaScript</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">DOM &amp; Interactivity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Database Systems</h4>
+          <p class="text-xs text-slate-400 mb-4">Relational modeling &amp; queries</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">MySQL</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Schema Design &amp; Queries</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">SQL Server</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Relational Data</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Development Experience</h4>
+          <p class="text-xs text-slate-400 mb-4">Applied engineering workflows</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Android Development</span>
+              <span class="px-2 py-0.5 rounded bg-violet-950/40 text-violet-300 font-mono">Internship Exposure</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">PHP Web Application</span>
+              <span class="px-2 py-0.5 rounded bg-violet-950/40 text-violet-300 font-mono">Full Project Lifecycle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Professional Skills</h4>
+          <p class="text-xs text-slate-400 mb-4">Leadership, teamwork &amp; communication</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Communication &amp; Presentations</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950/40 text-emerald-300 font-mono">Active Practice</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Problem-Solving &amp; Teamwork</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950/40 text-emerald-300 font-mono">Grounded Mindset</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800">
+          <h4 class="font-bold text-white text-base mb-1">Certifications &amp; Tools</h4>
+          <p class="text-xs text-slate-400 mb-4">Verified competencies</p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Modern AI Concepts</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Certified</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Course on Computer Concepts (CCC)</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Certified</span>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-950 flex items-center justify-between">
+              <span class="text-white font-medium">Tally Prime</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 text-slate-300 font-mono">Certified</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURED PROJECT: POSTPRO ==================== -->
+  <section id="projects" class="py-20 bg-slate-950/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-fuchsia-400 uppercase tracking-wider block mb-2">FLAGSHIP PROJECT</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">PostPro</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">AI-Simulated Caption, Hashtag &amp; Song Generator</p>
+      </div>
+
+      <div class="rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl overflow-hidden">
+        <div class="p-6 sm:p-10 border-b border-slate-800">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-8 space-y-4">
+              <span class="text-xs font-mono px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/30">
+                PHP • MySQL • HTML • CSS • JavaScript
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Your All-in-One Social Media Content Companion
+              </h3>
+              <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                PostPro is a PHP-based web application designed to simplify social media content creation. Users can upload a photo, select a mood, and receive relevant caption suggestions, hashtags, and song recommendations in one convenient platform. The project focuses on making content discovery easier through a structured database, mood-based suggestions, and a user-friendly interface.
+              </p>
+              
+              <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm text-slate-300">
+                <strong class="text-cyan-300">Technical Transparency: </strong>
+                PostPro utilizes an AI-simulated suggestion system powered by structured mood taxonomy and relational database queries, rather than an external live third-party AI API.
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col gap-3">
+              <button
+                onclick="openModal()"
+                class="w-full px-5 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 shadow-md shadow-violet-600/30 transition-all active:scale-95"
+              >
+                View Full Architecture &amp; Details
+              </button>
+              <span class="w-full text-center px-4 py-2.5 rounded-xl text-xs font-mono text-slate-400 bg-slate-950 border border-slate-800 cursor-not-allowed">
+                Live Demo: Link coming soon
+              </span>
+              <span class="w-full text-center px-4 py-2.5 rounded-xl text-xs font-mono text-slate-400 bg-slate-950 border border-slate-800 cursor-not-allowed">
+                Source Code: Link coming soon
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Live Simulator -->
+        <div class="p-6 sm:p-10 bg-slate-950/70">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h4 class="text-lg font-bold text-white">Interactive PostPro Simulation Studio</h4>
+              <p class="text-xs sm:text-sm text-slate-400">Select a mood to test how PostPro's taxonomy suggests captions, tags, and music.</p>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 w-fit">
+              ● Live Interactive Studio
+            </span>
+          </div>
+
+          <!-- Mood Switcher Buttons -->
+          <div class="flex flex-wrap gap-2 mb-8">
+            <button onclick="setMood('travel')" id="mood-btn-travel" class="mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-md transition-all">Travel &amp; Adventure</button>
+            <button onclick="setMood('energetic')" id="mood-btn-energetic" class="mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-all">Energetic / Fitness</button>
+            <button onclick="setMood('chill')" id="mood-btn-chill" class="mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-all">Chill &amp; Relaxed</button>
+            <button onclick="setMood('reflective')" id="mood-btn-reflective" class="mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-all">Deep &amp; Reflective</button>
+            <button onclick="setMood('celebration')" id="mood-btn-celebration" class="mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-all">Celebration &amp; Wins</button>
+          </div>
+
+          <!-- Outputs Grid -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-6 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                  <span class="text-xs font-mono text-cyan-400 font-semibold">SUGGESTED CAPTION</span>
+                  <button onclick="copyCaption()" id="copy-caption-btn" class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 hover:bg-slate-700 text-white transition-colors">Copy</button>
+                </div>
+                <p id="sim-caption" class="text-slate-100 text-sm sm:text-base italic bg-slate-950/40 p-4 rounded-xl border border-slate-800">
+                  "Collecting memories, one horizon at a time. The world is too big to stay in one place. 🌍✈️"
+                </p>
+              </div>
+              <span class="text-[11px] font-mono text-slate-500 mt-3">Mood Engine: Relational Text Matching</span>
+            </div>
+
+            <div class="lg:col-span-6 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
+                  <span class="text-xs font-mono text-fuchsia-400 font-semibold">RECOMMENDED HASHTAGS</span>
+                  <button onclick="copyTags()" id="copy-tags-btn" class="px-2.5 py-1 rounded-lg text-xs bg-slate-800 hover:bg-slate-700 text-white transition-colors">Copy All</button>
+                </div>
+                <div id="sim-tags" class="flex flex-wrap gap-2 p-3 rounded-xl bg-slate-950/40 border border-slate-800">
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">#Wanderlust</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">#TravelDiaries</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">#ExploreMore</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">#PassportReady</span>
+                  <span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">#ScenicViews</span>
+                </div>
+              </div>
+              <span class="text-[11px] font-mono text-slate-500 mt-3">Hashtag Discovery: Grouped by Frequency</span>
+            </div>
+
+            <div class="lg:col-span-12 p-5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <span class="text-xs font-mono text-amber-400 font-semibold block">SOUNDTRACK PAIRING</span>
+                <h5 id="sim-song" class="text-base font-bold text-white mt-0.5">
+                  Adventure of a Lifetime <span class="text-slate-400 font-normal">by Coldplay</span>
+                </h5>
+              </div>
+              <div class="flex items-center gap-3">
+                <span id="sim-vibe" class="px-3 py-1 rounded-lg text-xs font-mono bg-slate-950 text-slate-300 border border-slate-800">
+                  Vibe: Atmospheric / Uplifting
+                </span>
+                <button onclick="copySong()" id="copy-song-btn" class="px-3 py-1.5 rounded-lg text-xs bg-slate-800 hover:bg-slate-700 text-white transition-colors">
+                  Copy Title
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE SECTION ==================== -->
+  <section id="experience" class="py-20 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-violet-400 uppercase tracking-wider block mb-2">WORK EXPERIENCE</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Experience &amp; Practical Learning</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">Applied engineering exposure at Alpha Automation Company.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-violet-500 to-fuchsia-500"></div>
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+          <div>
+            <h3 class="text-2xl font-bold text-white">Android Developer Intern</h3>
+            <p class="text-sm font-medium text-fuchsia-300 mt-1">Alpha Automation Company</p>
+          </div>
+          <span class="px-3.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono text-slate-400 w-fit">
+            Practical Exposure &amp; App Development
+          </span>
+        </div>
+        <div class="pt-6 space-y-4">
+          <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+            During my Android development internship, I gained exposure to application development workflows and practical software development. This experience contributed to my understanding of building applications and strengthened my interest in developing useful digital solutions.
+          </p>
+          <div class="space-y-2 text-xs sm:text-sm text-slate-300 pt-2">
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3">
+              <span class="text-cyan-400">✓</span>
+              <span>Hands-on exposure to Android application workflows and architecture</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-3">
+              <span class="text-cyan-400">✓</span>
+              <span>Explored mobile development lifecycles and debugging workflows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EDUCATION SECTION ==================== -->
+  <section id="education" class="py-20 bg-slate-950/40 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-cyan-400 uppercase tracking-wider block mb-2">ACADEMIC JOURNEY</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Education</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">Foundations and postgraduate computing studies.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-6">
+        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-bold text-white">Master of Computer Applications (MCA)</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">2026 - Present • Pursuing</span>
+              </div>
+              <p class="text-sm text-fuchsia-300 font-medium mt-1">RV College of Engineering (RVCE)</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Bengaluru, Karnataka</span>
+          </div>
+          <p class="pt-4 text-slate-300 text-sm leading-relaxed">
+            Focusing on advanced computing concepts, software engineering, database systems, and application architecture at RV College of Engineering.
+          </p>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-slate-800 shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex flex-wrap items-center gap-2">
+                <h3 class="text-xl font-bold text-white">Bachelor of Computer Applications (BCA)</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">2023 - 2026 • Graduated</span>
+              </div>
+              <p class="text-sm text-fuchsia-300 font-medium mt-1">Bhavans Shri H.J Doshi Information Technology Institute</p>
+            </div>
+            <span class="text-xs font-mono text-slate-400">Jamnagar, Gujarat</span>
+          </div>
+          <p class="pt-4 text-slate-300 text-sm leading-relaxed">
+            Built strong foundations in programming principles, C language, database management systems, and web application development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-20 bg-slate-950/60 border-t border-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-medium text-fuchsia-400 uppercase tracking-wider block mb-2">GET IN TOUCH</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let's Build Something Meaningful</h2>
+        <p class="mt-2 text-slate-400 text-base sm:text-lg">Have an opportunity, an interesting idea, or a project to discuss? I'd be happy to connect.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto items-start">
+        <div class="lg:col-span-5 p-6 rounded-3xl bg-slate-900/80 border border-slate-800 space-y-4">
+          <h3 class="text-xl font-bold text-white">Connect Directly</h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Whether you're looking for a motivated MCA intern, want to discuss PostPro, or just want to connect, feel free to reach out.
+          </p>
+          
+          <div class="space-y-3 pt-2">
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-slate-500 font-mono block text-[10px]">EMAIL</span>
+                <a href="mailto:pithvaharsh006@gmail.com" class="text-white font-medium hover:text-fuchsia-400 transition-colors">pithvaharsh006@gmail.com</a>
+              </div>
+              <button onclick="copyEmail()" id="copy-email-btn" class="px-2 py-1 rounded bg-slate-900 text-slate-300 hover:text-white border border-slate-800 text-[11px] transition-colors">Copy</button>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-slate-500 font-mono block text-[10px]">PHONE &amp; WHATSAPP</span>
+                <a href="tel:+919408517380" class="text-white font-medium hover:text-fuchsia-400 transition-colors">+91 9408517380</a>
+              </div>
+              <a href="https://wa.me/919408517380" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-500/30 text-[11px] hover:bg-emerald-900/60 transition-colors font-medium">
+                💬 WhatsApp
+              </a>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-slate-500 font-mono block text-[10px]">LINKEDIN</span>
+                <a href="https://www.linkedin.com/in/harsh-pithva" target="_blank" rel="noopener noreferrer" class="text-fuchsia-400 font-medium hover:underline">linkedin.com/in/harsh-pithva</a>
+              </div>
+              <span class="text-slate-500 text-[11px]">&rarr;</span>
+            </div>
+
+            <div class="p-3 rounded-xl bg-violet-950/40 border border-violet-500/30 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-violet-300 font-mono block text-[10px]">ATTACHED CV</span>
+                <span class="text-white font-medium">Harsh_Pithva_Resume.pdf</span>
+              </div>
+              <a href="public/resume.pdf" download="Harsh_Pithva_Resume.pdf" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white font-medium text-[11px]">
+                Download
+              </a>
+            </div>
+          </div>
+
+          <div class="pt-2 text-xs font-mono text-emerald-400 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Responsive to academic &amp; professional inquiries</span>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="lg:col-span-7 p-6 rounded-3xl bg-slate-900/80 border border-slate-800">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="text-xl font-bold text-white">Send a Message</h3>
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-violet-500/10 text-violet-300 border border-violet-500/30">Direct &amp; Instant</span>
+          </div>
+          <p class="text-xs text-slate-400 mb-4">Send a direct message to pithvaharsh006@gmail.com.</p>
+          <div id="form-msg" class="p-4 mb-4 rounded-2xl hidden"></div>
+          
+          <form id="contact-form" onsubmit="handleForm(event)" class="space-y-4 text-xs">
+
+            <div>
+              <label class="block text-slate-400 font-mono uppercase mb-1">Your Name</label>
+              <input type="text" name="name" id="form-name" required placeholder="Alex Sharma" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-violet-500 text-sm" />
+            </div>
+            <div>
+              <label class="block text-slate-400 font-mono uppercase mb-1">Your Email</label>
+              <input type="email" name="email" id="form-email" required placeholder="alex@example.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-violet-500 text-sm" />
+            </div>
+            <div>
+              <label class="block text-slate-400 font-mono uppercase mb-1">Subject</label>
+              <input type="text" name="subject" id="form-subject" required placeholder="Collaboration / MCA Internship Opportunity" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-violet-500 text-sm" />
+            </div>
+            <div>
+              <label class="block text-slate-400 font-mono uppercase mb-1">Message</label>
+              <textarea name="message" id="form-message" rows="4" required placeholder="Write your message here..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-violet-500 text-sm"></textarea>
+            </div>
+            
+            <!-- Quick Send Option Buttons (Native Links - Never Blocked) -->
+            <div class="pt-1">
+              <label class="block text-slate-400 font-mono uppercase text-[10px] mb-2">Or Send Directly Via:</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pithvaharsh006@gmail.com" target="_blank" rel="noopener noreferrer" onclick="prepareLink(this, 'gmail')" class="p-2 rounded-xl bg-rose-950/40 border border-rose-500/30 text-rose-300 hover:bg-rose-900/40 text-xs font-medium flex items-center justify-center gap-1.5 transition-all text-center">
+                  <span>✉️</span> Gmail Web
+                </a>
+                <a href="https://outlook.live.com/mail/0/deeplink/compose?to=pithvaharsh006@gmail.com" target="_blank" rel="noopener noreferrer" onclick="prepareLink(this, 'outlook')" class="p-2 rounded-xl bg-sky-950/40 border border-sky-500/30 text-sky-300 hover:bg-sky-900/40 text-xs font-medium flex items-center justify-center gap-1.5 transition-all text-center">
+                  <span>📧</span> Outlook Web
+                </a>
+                <a href="https://wa.me/919408517380" target="_blank" rel="noopener noreferrer" onclick="prepareLink(this, 'wa')" class="p-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-900/40 text-xs font-medium flex items-center justify-center gap-1.5 transition-all text-center">
+                  <span>💬</span> WhatsApp
+                </a>
+                <button type="button" id="copy-draft-btn" onclick="copyMessageDraft()" class="p-2 rounded-xl bg-violet-950/40 border border-violet-500/30 text-violet-300 hover:bg-violet-900/40 text-xs font-medium flex items-center justify-center gap-1.5 transition-all">
+                  <span>📋</span> Copy Draft
+                </button>
+              </div>
+            </div>
+
+            <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 shadow-md shadow-violet-600/30 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              <span id="btn-text">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-10 border-t border-slate-900 bg-navy-950 text-xs font-mono text-slate-500 text-center">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p class="text-slate-300 font-bold text-sm">Harsh Pithva — MCA @ RV College of Engineering</p>
+      <p>"Learning continuously. Building thoughtfully."</p>
+      <p>&copy; 2026 Harsh Pithva. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== ARCHITECTURE MODAL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+    <div class="bg-navy-950 border border-slate-700 rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto text-left">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <h3 class="font-bold text-white text-lg">PostPro — Architectural Overview</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl font-bold p-1">&times;</button>
+      </div>
+      <div class="space-y-3 text-xs sm:text-sm text-slate-300">
+        <p><strong>Core Objective:</strong> Simplify social media content creation by generating mood-based captions, hashtag recommendations, and soundtrack pairings in one unified PHP application.</p>
+        <p><strong>Architecture:</strong> Relational MySQL database schema structuring moods, categorized tags, and media tracks. Secure PHP sessions with authentication and password recovery.</p>
+        <p><strong>Transparency:</strong> Powered by structured mood taxonomy and relational database queries rather than an external live AI API.</p>
+        <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
+          <span class="font-bold text-white block mb-1">Key Learning Outcomes:</span>
+          <ul class="list-disc list-inside space-y-1 text-slate-400">
+            <li>Designed and normalized relational MySQL database schema</li>
+            <li>Implemented server-side authentication &amp; session handling in PHP</li>
+            <li>Built responsive user dashboard and copy interactions in JavaScript</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-3 border-t border-slate-800 text-right">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl bg-slate-800 text-white hover:bg-slate-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BACK TO TOP (SCROLL TO UPSIDE) BUTTON ==================== -->
+  <button
+    id="back-to-top"
+    onclick="scrollToTop()"
+    class="fixed bottom-6 right-6 z-40 p-3 sm:p-3.5 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-fuchsia-600 text-white shadow-xl shadow-violet-600/40 hover:shadow-violet-600/60 hover:scale-110 active:scale-95 transition-all duration-300 opacity-0 pointer-events-none translate-y-4 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-violet-400 group cursor-pointer"
+    aria-label="Scroll to top of page"
+    title="Back to top"
+  >
+    <svg class="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-200 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <!-- ==================== PURE JAVASCRIPT LOGIC (100% RELIABLE) ==================== -->
+  <script>
+    // Back to top smooth scroll logic
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    // Scroll listener for back-to-top button visibility
+    window.addEventListener('scroll', function() {
+      const topBtn = document.getElementById('back-to-top');
+      if (!topBtn) return;
+      if (window.scrollY > 300) {
+        topBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        topBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      } else {
+        topBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        topBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+      }
+    });
+
+    // Responsive Mobile Navigation Functions
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const hamburger = document.getElementById('hamburger-icon');
+      const close = document.getElementById('close-icon');
+      if (!menu) return;
+
+      const isOpen = !menu.classList.contains('hidden');
+      if (isOpen) {
+        menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (hamburger) hamburger.classList.remove('hidden');
+        if (close) close.classList.add('hidden');
+      } else {
+        menu.classList.remove('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        if (hamburger) hamburger.classList.add('hidden');
+        if (close) close.classList.remove('hidden');
+      }
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const btn = document.getElementById('mobile-menu-btn');
+      const hamburger = document.getElementById('hamburger-icon');
+      const close = document.getElementById('close-icon');
+      if (menu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+        if (hamburger) hamburger.classList.remove('hidden');
+        if (close) close.classList.add('hidden');
+      }
+    }
+
+    // Close menu when tapping anywhere outside the navbar
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navbar');
+      const menu = document.getElementById('mobile-menu');
+      if (nav && menu && !menu.classList.contains('hidden')) {
+        if (!nav.contains(event.target)) {
+          closeMobileMenu();
+        }
+      }
+    });
+
+    // Close menu when pressing the Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
+
+    // Tab switching in Aurora Developer Hub
+    function setHeroTab(tabName) {
+      const tabs = ['profile', 'postpro', 'stack', 'code'];
+      tabs.forEach(t => {
+        const btn = document.getElementById('hero-tab-' + t);
+        const content = document.getElementById('hero-content-' + t);
+        if (!btn || !content) return;
+        if (t === tabName) {
+          btn.className = 'px-3 py-1.5 rounded-lg font-medium text-white bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 shadow-sm transition-all flex items-center gap-1.5';
+          content.classList.remove('hidden');
+        } else {
+          btn.className = 'px-3 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white transition-all flex items-center gap-1.5';
+          content.classList.add('hidden');
+        }
+      });
+    }
+
+    // Legacy Tab switching
+    function setTab(tabName) {
+      ['overview', 'postpro', 'stack'].forEach(t => {
+        const btn = document.getElementById('tab-' + t);
+        const content = document.getElementById('content-' + t);
+        if (btn && content) {
+          if (t === tabName) {
+            btn.className = 'px-3.5 py-2 border-b-2 font-medium border-violet-500 text-violet-300 bg-slate-900 transition-colors';
+            content.classList.remove('hidden');
+          } else {
+            btn.className = 'px-3.5 py-2 border-b-2 font-medium border-transparent text-slate-400 hover:text-slate-200 transition-colors';
+            content.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // Interactive PostPro Simulator Data
+    const MOOD_DATA = {
+      travel: {
+        caption: "Collecting memories, one horizon at a time. The world is too big to stay in one place. 🌍✈️",
+        tags: ["#Wanderlust", "#TravelDiaries", "#ExploreMore", "#PassportReady", "#ScenicViews"],
+        song: "Adventure of a Lifetime",
+        artist: "Coldplay",
+        vibe: "Atmospheric / Uplifting"
+      },
+      energetic: {
+        caption: "Pushing limits every single day. Consistent effort beats sporadic motivation. 💪⚡",
+        tags: ["#FitnessJourney", "#DailyGrind", "#NeverSettle", "#WorkoutMotivation", "#DisciplineOverMotivation"],
+        song: "Stronger",
+        artist: "Kanye West",
+        vibe: "High Energy / Motivation"
+      },
+      chill: {
+        caption: "Slowing down, recharging, and finding peace in simple moments and quiet spaces. ☕🌿",
+        tags: ["#ChillVibes", "#WeekendMood", "#SlowLiving", "#PeacefulMind", "#SundayReset"],
+        song: "Sunflower",
+        artist: "Post Malone & Swae Lee",
+        vibe: "Mellow / Lo-Fi"
+      },
+      reflective: {
+        caption: "Growth is quiet before it becomes visible. Trust the process and honor the journey. 🌌💭",
+        tags: ["#MindsetShift", "#GrowthJourney", "#SelfReflection", "#Perspective", "#FocusOnGoals"],
+        song: "Fix You",
+        artist: "Coldplay",
+        vibe: "Thoughtful / Inspiring"
+      },
+      celebration: {
+        caption: "Milestones achieved, new chapters begun. Grateful for everyone who believed in the vision! 🎉🥂",
+        tags: ["#CelebrateSuccess", "#MilestoneUnlocked", "#GoodTimes", "#WinningTogether", "#CheersToGrowth"],
+        song: "Can't Stop the Feeling!",
+        artist: "Justin Timberlake",
+        vibe: "Festive / Dance"
+      }
+    };
+
+    let currentMood = 'travel';
+
+    function setMood(moodKey) {
+      currentMood = moodKey;
+      const data = MOOD_DATA[moodKey];
+      
+      document.querySelectorAll('.mood-btn').forEach(b => {
+        b.className = 'mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-all';
+      });
+      document.getElementById('mood-btn-' + moodKey).className = 'mood-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-md transition-all';
+
+      document.getElementById('sim-caption').innerText = `"${data.caption}"`;
+      document.getElementById('sim-tags').innerHTML = data.tags.map(t => 
+        `<span class="px-2.5 py-1 rounded-md text-xs font-mono bg-violet-950/40 text-violet-300 border border-violet-800/40">${t}</span>`
+      ).join('');
+      document.getElementById('sim-song').innerHTML = `${data.song} <span class="text-slate-400 font-normal">by ${data.artist}</span>`;
+      document.getElementById('sim-vibe').innerText = `Vibe: ${data.vibe}`;
+    }
+
+    function copyCaption() {
+      navigator.clipboard.writeText(MOOD_DATA[currentMood].caption);
+      const btn = document.getElementById('copy-caption-btn');
+      btn.innerText = 'Copied!';
+      setTimeout(() => btn.innerText = 'Copy', 2000);
+    }
+
+    function copyTags() {
+      navigator.clipboard.writeText(MOOD_DATA[currentMood].tags.join(' '));
+      const btn = document.getElementById('copy-tags-btn');
+      btn.innerText = 'Copied All!';
+      setTimeout(() => btn.innerText = 'Copy All', 2000);
+    }
+
+    function copySong() {
+      const data = MOOD_DATA[currentMood];
+      navigator.clipboard.writeText(`${data.song} - ${data.artist}`);
+      const btn = document.getElementById('copy-song-btn');
+      btn.innerText = 'Copied!';
+      setTimeout(() => btn.innerText = 'Copy Title', 2000);
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('pithvaharsh006@gmail.com');
+      const btn = document.getElementById('copy-email-btn');
+      btn.innerText = 'Copied!';
+      setTimeout(() => btn.innerText = 'Copy', 2000);
+    }
+
+    function openModal() {
+      document.getElementById('project-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('project-modal').classList.add('hidden');
+    }
+
+    function getFormData() {
+      const name = (document.getElementById('form-name').value || '').trim();
+      const email = (document.getElementById('form-email').value || '').trim();
+      const subject = (document.getElementById('form-subject').value || '').trim();
+      const message = (document.getElementById('form-message').value || '').trim();
+      return { name, email, subject, message };
+    }
+
+    function prepareLink(el, type) {
+      const data = getFormData();
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const sub = encodeURIComponent(data.subject ? `[Portfolio Contact] ${data.subject}` : `[Portfolio Contact] Inquiry from ${data.name || 'Visitor'}`);
+      const body = encodeURIComponent(`Hi Harsh,\n\n${data.message || 'I would like to connect with you regarding an opportunity.'}\n\n------------------------------\nFrom: ${data.name || 'Visitor'}\nEmail: ${data.email || 'Not provided'}\nSent via Portfolio Contact Form`);
+
+      if (type === 'gmail') {
+        el.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${sub}&body=${body}`;
+      } else if (type === 'outlook') {
+        el.href = `https://outlook.live.com/mail/0/deeplink/compose?to=${targetEmail}&subject=${sub}&body=${body}`;
+      } else if (type === 'wa') {
+        const text = encodeURIComponent(`*Portfolio Inquiry for Harsh Pithva*\nName: ${data.name || 'Visitor'}\nEmail: ${data.email || 'N/A'}\nSubject: ${data.subject || 'Opportunity'}\n\nMessage:\n${data.message || 'Hi Harsh, I would like to connect with you.'}`);
+        el.href = `https://wa.me/919408517380?text=${text}`;
+      }
+
+      // Clear all fields upon launching direct link
+      if (data.name || data.email || data.message || data.subject) {
+        setTimeout(() => {
+          clearAllFields();
+        }, 300);
+      }
+    }
+
+    function sendViaGmail() {
+      const data = getFormData();
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const sub = encodeURIComponent(data.subject ? `[Portfolio Contact] ${data.subject}` : `[Portfolio Contact] Inquiry from ${data.name || 'Visitor'}`);
+      const body = encodeURIComponent(`Hi Harsh,\n\n${data.message || 'I would like to connect with you regarding an opportunity.'}\n\n------------------------------\nFrom: ${data.name || 'Visitor'}\nEmail: ${data.email || 'Not provided'}\nSent via Portfolio Contact Form`);
+      const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${sub}&body=${body}`;
+      try {
+        const win = window.open(url, '_blank');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = url;
+        }
+      } catch (err) {
+        window.location.href = url;
+      }
+      clearAllFields();
+      showDirectFeedback('Opened Web Gmail! Finish your draft and click Send.');
+    }
+
+    function sendViaOutlook() {
+      const data = getFormData();
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const sub = encodeURIComponent(data.subject ? `[Portfolio Contact] ${data.subject}` : `[Portfolio Contact] Inquiry from ${data.name || 'Visitor'}`);
+      const body = encodeURIComponent(`Hi Harsh,\n\n${data.message || 'I would like to connect with you regarding an opportunity.'}\n\n------------------------------\nFrom: ${data.name || 'Visitor'}\nEmail: ${data.email || 'Not provided'}\nSent via Portfolio Contact Form`);
+      const url = `https://outlook.live.com/mail/0/deeplink/compose?to=${targetEmail}&subject=${sub}&body=${body}`;
+      try {
+        const win = window.open(url, '_blank');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = url;
+        }
+      } catch (err) {
+        window.location.href = url;
+      }
+      clearAllFields();
+      showDirectFeedback('Opened Web Outlook! Finish your draft and click Send.');
+    }
+
+    function sendViaWhatsApp() {
+      const data = getFormData();
+      const text = encodeURIComponent(`*Portfolio Inquiry for Harsh Pithva*\nName: ${data.name || 'Visitor'}\nEmail: ${data.email || 'N/A'}\nSubject: ${data.subject || 'Opportunity'}\n\nMessage:\n${data.message || 'Hi Harsh, I would like to connect with you.'}`);
+      const url = `https://wa.me/919408517380?text=${text}`;
+      try {
+        const win = window.open(url, '_blank');
+        if (!win || win.closed || typeof win.closed === 'undefined') {
+          window.location.href = url;
+        }
+      } catch (err) {
+        window.location.href = url;
+      }
+      clearAllFields();
+      showDirectFeedback('Opened in WhatsApp! You can send your message directly to Harsh.');
+    }
+
+    function sendViaDefaultMail() {
+      const data = getFormData();
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const sub = encodeURIComponent(data.subject ? `[Portfolio Contact] ${data.subject}` : `[Portfolio Contact] Inquiry from ${data.name || 'Visitor'}`);
+      const body = encodeURIComponent(`Hi Harsh,\n\n${data.message || 'I would like to connect with you.'}\n\n------------------------------\nFrom: ${data.name || 'Visitor'}\nEmail: ${data.email || 'Not provided'}\nSent via Portfolio Contact Form`);
+      window.location.href = `mailto:${targetEmail}?subject=${sub}&body=${body}`;
+      clearAllFields();
+      showDirectFeedback('Prompted your default mail client.');
+    }
+
+    function clearAllFields() {
+      const n = document.getElementById('form-name');
+      const e = document.getElementById('form-email');
+      const s = document.getElementById('form-subject');
+      const m = document.getElementById('form-message');
+      if (n) n.value = '';
+      if (e) e.value = '';
+      if (s) s.value = '';
+      if (m) m.value = '';
+    }
+
+    function copyMessageDraft() {
+      const data = getFormData();
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const draft = `To: ${targetEmail}\nSubject: [Portfolio Contact] ${data.subject || 'Opportunity'}\n\n${data.message || 'Hi Harsh,\n\nI would like to connect with you regarding an opportunity.'}\n\n------------------------------\nFrom: ${data.name || 'Visitor'} (${data.email || 'Not provided'})\nSent via Harsh Pithva Portfolio`;
+      navigator.clipboard.writeText(draft);
+      const btn = document.getElementById('copy-draft-btn');
+      if (btn) {
+        const old = btn.innerHTML;
+        btn.innerHTML = '<span>✓</span> Copied!';
+        setTimeout(() => btn.innerHTML = old, 2500);
+      }
+      showDirectFeedback('Copied email draft to clipboard! You can paste into any email app.');
+    }
+
+    function showDirectFeedback(headline) {
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const msg = document.getElementById('form-msg');
+      if (!msg) return;
+      msg.innerHTML = `
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-emerald-300 font-semibold text-sm">
+            <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span>${headline}</span>
+          </div>
+          <p class="text-xs text-slate-300">Direct email: <strong class="text-white">${targetEmail}</strong></p>
+        </div>
+      `;
+      msg.className = 'p-4 mb-4 rounded-2xl bg-emerald-950/70 border border-emerald-500/50 text-slate-200 block';
+      msg.classList.remove('hidden');
+    }
+
+    async function handleForm(e) {
+      if (e) e.preventDefault();
+
+      const nameEl = document.getElementById('form-name');
+      const emailEl = document.getElementById('form-email');
+      const subjectEl = document.getElementById('form-subject');
+      const messageEl = document.getElementById('form-message');
+      const msg = document.getElementById('form-msg');
+
+      const nameVal = (nameEl.value || '').trim();
+      const emailVal = (emailEl.value || '').trim();
+      const subjVal = (subjectEl.value || '').trim();
+      const msgVal = (messageEl.value || '').trim();
+
+      if (!nameVal || !emailVal || !msgVal) {
+        msg.innerHTML = `
+          <div class="flex items-center gap-2 text-rose-300 font-semibold text-xs">
+            <svg class="w-4 h-4 text-rose-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>Please fill out your Name, Email, and Message before sending.</span>
+          </div>
+        `;
+        msg.className = 'p-3 mb-4 rounded-xl bg-rose-950/70 border border-rose-500/50 text-slate-200 block';
+        msg.classList.remove('hidden');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-btn');
+      const btnText = document.getElementById('btn-text');
+      if (submitBtn && btnText) {
+        submitBtn.disabled = true;
+        btnText.innerText = 'Sending message...';
+      }
+
+      const targetEmail = 'pithvaharsh006@gmail.com';
+      const fullSubj = subjVal ? `[Portfolio Contact] ${subjVal}` : `[Portfolio Contact] Inquiry from ${nameVal}`;
+      const emailBody = `Hi Harsh,\n\n${msgVal}\n\n------------------------------\nSender Name: ${nameVal}\nSender Email: ${emailVal}\nDate: ${new Date().toLocaleString()}\nSent via Harsh Pithva Portfolio`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${targetEmail}&su=${encodeURIComponent(fullSubj)}&body=${encodeURIComponent(emailBody)}`;
+      const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(fullSubj)}&body=${encodeURIComponent(emailBody)}`;
+      const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=${targetEmail}&subject=${encodeURIComponent(fullSubj)}&body=${encodeURIComponent(emailBody)}`;
+      const waText = encodeURIComponent(`*Portfolio Inquiry for Harsh Pithva*\nName: ${nameVal}\nEmail: ${emailVal}\nSubject: ${subjVal || 'Inquiry'}\n\nMessage:\n${msgVal}`);
+      const waUrl = `https://wa.me/919408517380?text=${waText}`;
+
+      // Clear all fields immediately as requested by user
+      clearAllFields();
+
+      let deliveredViaServer = false;
+
+      // If running on a live web server (HTTP / HTTPS), attempt FormSubmit AJAX
+      if (window.location.protocol.startsWith('http')) {
+        try {
+          const res = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: nameVal,
+              email: emailVal,
+              _subject: fullSubj,
+              message: msgVal
+            })
+          });
+          const json = await res.json();
+          if (json.success === 'true' || json.success === true) {
+            deliveredViaServer = true;
+          }
+        } catch (err) {
+          deliveredViaServer = false;
+        }
+      }
+
+      if (submitBtn && btnText) {
+        submitBtn.disabled = false;
+        btnText.innerText = 'Send Message';
+      }
+
+      if (deliveredViaServer) {
+        msg.innerHTML = `
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm">
+              <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Message Sent Directly to Harsh!</span>
+            </div>
+            <p class="text-xs text-slate-300">
+              Your message was delivered directly to <strong>${targetEmail}</strong>. Thank you for connecting, Harsh will review and respond soon!
+            </p>
+          </div>
+        `;
+        msg.className = 'p-4 mb-4 rounded-2xl bg-emerald-950/70 border border-emerald-500/50 text-slate-200 block shadow-lg shadow-emerald-950/40';
+        msg.classList.remove('hidden');
+      } else {
+        // file:/// or server fallback: Open Web Gmail directly with prefilled draft!
+        let openedTab = false;
+        try {
+          const win = window.open(gmailUrl, '_blank');
+          if (win && !win.closed && typeof win.closed !== 'undefined') {
+            openedTab = true;
+          }
+        } catch (e) {
+          openedTab = false;
+        }
+
+        if (!openedTab) {
+          window.location.href = mailtoUrl;
+        }
+
+        msg.innerHTML = `
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 text-emerald-300 font-bold text-sm">
+              <svg class="w-5 h-5 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Email Composer Opened!</span>
+            </div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Your message has been pre-filled and opened in Web Gmail addressed directly to <strong class="text-white">${targetEmail}</strong>.
+              Simply click <strong class="text-emerald-400 font-semibold">"Send"</strong> in Gmail to deliver immediately!
+            </p>
+            <div class="pt-2 border-t border-emerald-500/20 flex flex-wrap gap-2 items-center">
+              <span class="text-[11px] text-slate-400 font-mono">Direct Links:</span>
+              <a href="${gmailUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-red-600/30 border border-red-500/40 text-red-200 hover:bg-red-600/50 text-xs font-semibold flex items-center gap-1.5 transition-all">
+                <span>✉️</span> Re-open Web Gmail
+              </a>
+              <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-emerald-600/30 border border-emerald-500/40 text-emerald-200 hover:bg-emerald-600/50 text-xs font-semibold flex items-center gap-1.5 transition-all">
+                <span>💬</span> WhatsApp (+91 9408517380)
+              </a>
+              <a href="${outlookUrl}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-blue-600/30 border border-blue-500/40 text-blue-200 hover:bg-blue-600/50 text-xs font-semibold flex items-center gap-1.5 transition-all">
+                <span>📧</span> Outlook Web
+              </a>
+              <a href="${mailtoUrl}" class="px-3 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-slate-200 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all">
+                <span>💻</span> Default Mail App
+              </a>
+            </div>
+          </div>
+        `;
+        msg.className = 'p-4 mb-4 rounded-2xl bg-emerald-950/70 border border-emerald-500/50 text-slate-200 block shadow-lg shadow-emerald-950/40';
+        msg.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="hpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+  </defs>
+  <!-- Background Rounded Squircle -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Subtle Glow Layer -->
+  <circle cx="64" cy="64" r="44" fill="#6366f1" opacity="0.12" filter="blur(8px)"/>
+
+  <!-- HP Monogram Geometry -->
+  <g fill="none" stroke="url(#hpGrad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Letter H -->
+    <path d="M 36 36 L 36 92" />
+    <path d="M 60 36 L 60 92" />
+    <path d="M 36 64 L 60 64" />
+    
+    <!-- Letter P (sharing right stem or separate stylish loop) -->
+    <path d="M 72 36 L 72 92" />
+    <path d="M 72 36 C 88 36, 96 42, 96 54 C 96 66, 88 72, 72 72" />
+  </g>
+</svg>

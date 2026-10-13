@@ -1,0 +1,5 @@
+# Robots.txt for Harsh Pithva's Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://harshpithva.dev/sitemap.xml

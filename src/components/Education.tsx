@@ -27,7 +27,7 @@ export const Education: React.FC = () => {
           {/* Connector line for desktop */}
           <div className="hidden md:block absolute top-8 bottom-8 left-8 w-0.5 bg-gradient-to-b from-indigo-500 via-blue-500 to-slate-800" />
 
-          {educationData.map((edu, idx) => (
+          {educationData.map((edu) => (
             <div
               key={edu.id}
               className="md:pl-16 relative"
